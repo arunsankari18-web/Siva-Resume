@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siva Sankari - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: #e8ecf1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 15px;
+        }
+
+        .resume {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #0a2647;
+            padding: 28px 35px 22px 35px;
+            color: #ffffff;
+        }
+
+        .header-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .name-title h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .name-title .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 22px;
+            font-size: 13.5px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 20px;
+            border-radius: 40px;
+            margin-top: 6px;
+        }
+
+        .contact-row a,
+        .contact-row span {
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-row i {
+            font-size: 14px;
+            width: 18px;
+            text-align: center;
+        }
+
+        .contact-row a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        /* ===== BODY ===== */
+        .body-grid {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+        }
+
+        /* ===== LEFT COLUMN ===== */
+        .left-col {
+            background: #f5f7fa;
+            padding: 28px 24px 32px 24px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .left-col .section-title {
+            color: #0a2647;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            margin: 24px 0 12px 0;
+            padding-bottom: 5px;
+            border-bottom: 2.5px solid #0a2647;
+            display: inline-block;
+        }
+
+        .left-col .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .objective-text {
+            font-size: 14px;
+            color: #1a2a3f;
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+
+        .edu-item {
+            margin-bottom: 16px;
+        }
+
+        .edu-item .institute {
+            font-weight: 700;
+            color: #0a2647;
+            font-size: 14px;
+        }
+
+        .edu-item .year {
+            font-size: 13px;
+            color: #1a4a7a;
+            font-weight: 500;
+        }
+
+        .edu-item .detail {
+            font-size: 13.5px;
+            color: #1f3349;
+            line-height: 1.5;
+        }
+
+        .edu-item .marks {
+            font-weight: 600;
+            color: #0a2647;
+        }
+
+        .skill-group {
+            margin-bottom: 6px;
+            font-size: 13.5px;
+            color: #1a2a3f;
+        }
+
+        .skill-group strong {
+            color: #0a2647;
+        }
+
+        .interest-list {
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        .interest-list li {
+            padding: 4px 0 4px 22px;
+            position: relative;
+            font-size: 14px;
+            color: #1a2a3f;
+        }
+
+        .interest-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 2px;
+            color: #0a2647;
+            font-weight: 700;
+        }
+
+        .lang-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            margin-top: 4px;
+        }
+
+        .lang-list span {
+            background: #dce4ed;
+            padding: 3px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #0a2647;
+        }
+
+        /* ===== RIGHT COLUMN ===== */
+        .right-col {
+            background: #ffffff;
+            padding: 28px 28px 32px 26px;
+        }
+
+        .right-col .section-title {
+            color: #0a2647;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            margin: 26px 0 12px 0;
+            padding-bottom: 5px;
+            border-bottom: 2.5px solid #0a2647;
+            display: inline-block;
+        }
+
+        .right-col .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .project-item {
+            margin-bottom: 16px;
+        }
+
+        .project-item .proj-title {
+            font-weight: 700;
+            color: #0a2647;
+            font-size: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 12px;
+        }
+
+        .project-item .proj-title a {
+            color: #1a4a7a;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            background: #eaf0f6;
+            padding: 1px 12px;
+            border-radius: 30px;
+        }
+
+        .project-item .proj-title a:hover {
+            background: #d4dfea;
+            text-decoration: underline;
+        }
+
+        .project-item .proj-desc {
+            font-size: 13.5px;
+            color: #1f3349;
+            line-height: 1.6;
+            padding-left: 4px;
+            margin-top: 2px;
+        }
+
+        .project-item .proj-desc .bullet {
+            color: #0a2647;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+
+        /* ===== CERTIFICATIONS - CLEAN STRUCTURED ===== */
+        .cert-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px 20px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eef2f7;
+            align-items: baseline;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+
+        .cert-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 8px;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #0a2647;
+            font-size: 14px;
+        }
+
+        .cert-org {
+            font-size: 13px;
+            color: #2a4a6a;
+        }
+
+        .cert-details {
+            font-size: 12.5px;
+            color: #3a5a7a;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+            align-items: center;
+        }
+
+        .cert-details .sep {
+            color: #b0c4d8;
+        }
+
+        .cert-link {
+            color: #1a4a7a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 12.5px;
+            white-space: nowrap;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ACHIEVEMENTS ===== */
+        .achieve-item {
+            font-size: 13.5px;
+            color: #1f3349;
+            padding: 4px 0 4px 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .achieve-item::before {
+            content: "🏅";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 14px;
+        }
+
+        .achieve-item a {
+            color: #1a4a7a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 12px;
+            margin-left: 6px;
+        }
+
+        .achieve-item a:hover {
+            text-decoration: underline;
+        }
+
+        .participation-item {
+            font-size: 13.5px;
+            color: #1f3349;
+            padding: 4px 0 4px 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .participation-item::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            color: #0a2647;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .body-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .left-col {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .header {
+                padding: 20px 22px 18px 22px;
+            }
+
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .contact-row {
+                background: rgba(255, 255, 255, 0.06);
+                padding: 8px 16px;
+                border-radius: 30px;
+                gap: 8px 14px;
+                font-size: 12.5px;
+            }
+
+            .name-title h1 {
+                font-size: 26px;
+            }
+
+            .right-col {
+                padding: 22px 18px 26px 18px;
+            }
+
+            .left-col {
+                padding: 22px 18px 26px 18px;
+            }
+
+            .cert-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .cert-link {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-row {
+                font-size: 11.5px;
+                gap: 5px 10px;
+                padding: 6px 12px;
+            }
+
+            .contact-row i {
+                font-size: 12px;
+                width: 14px;
+            }
+
+            .project-item .proj-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="header-top">
+                <div class="name-title">
+                    <h1>SIVA SANKARI R</h1>
+                    <div class="subtitle">Aspiring Data Analyst</div>
+                </div>
+                <div class="contact-row">
+                    <a href="https://www.google.com/maps/place/Thoothukudi,+Tamil+Nadu" target="_blank"><i class="fas fa-map-marker-alt"></i> Thoothukudi, Tamil Nadu</a>
+                    <a href="tel:+919080427125"><i class="fas fa-phone-alt"></i> +91 9080427125</a>
+                    <a href="mailto:anursankari182@gmail.com"><i class="fas fa-envelope"></i> anursankari182@gmail.com</a>
+                    <a href="https://github.com/arunsankari18-web/"><i class="fab fa-github"></i> Github</a>
+                    <a href="https://www.linkedin.com/in/siva-sankari-bb8768330/"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== BODY ===== -->
+        <div class="body-grid">
+
+            <!-- ===== LEFT COLUMN ===== -->
+            <aside class="left-col">
+
+                <div class="section-title">CAREER OBJECTIVE</div>
+                <p class="objective-text">
+                    Aspiring Data Scientist passionate about turning data into actionable insights to drive business growth.
+                </p>
+
+                <div class="section-title">EDUCATION</div>
+
+                <div class="edu-item">
+                    <div class="institute">National Engineering College, Koyilandy, Tamil Nadu</div>
+                    <div class="year">2024 – 2028</div>
+                    <div class="detail">B.Tech – Information Technology <span class="marks">| CGPA: 8.25</span></div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="institute">Harbour Higher Secondary School, Thoothukudi,</div>
+                    <div class="year">2023 – 2024</div>
+                    <div class="detail">Higher Secondary Education (12th Grade) <span class="marks">| Marks: 516 / 600 | 86%</span></div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="institute">C.M High School, Thoothukudi,</div>
+                    <div class="year">2021 – 2022</div>
+                    <div class="detail">Secondary Education (10th Grade) <span class="marks">| Marks: 449 / 500 | 89.8%</span></div>
+                </div>
+
+                <div class="section-title">TECHNICAL SKILLS</div>
+                <div class="skill-group"><strong>Languages:</strong> C, C++, Java</div>
+                <div class="skill-group"><strong>Web Development:</strong> HTML, CSS, React</div>
+                <div class="skill-group"><strong>Tools:</strong> GitHub, VS Code</div>
+
+                <div class="section-title">AREA OF INTEREST</div>
+                <ul class="interest-list">
+                    <li>Data Science and Analytics</li>
+                    <li>Machine Learning (ML)</li>
+                </ul>
+
+                <div class="section-title">LANGUAGES</div>
+                <div class="lang-list">
+                    <span>Tamil</span>
+                    <span>English</span>
+                    <span>Hindi</span>
+                </div>
+
+            </aside>
+
+            <!-- ===== RIGHT COLUMN ===== -->
+            <main class="right-col">
+
+                <div class="section-title">PROJECTS</div>
+
+                <div class="project-item">
+                    <div class="proj-title">
+                        Movie Rating Prediction
+                        <a href="https://github.com/arunsankari18-web/Task-2" target="_blank">Project Link</a>
+                    </div>
+                    <div class="proj-desc">
+                        <span class="bullet">•</span> Built a regression model to predict movie ratings using genre, budget, cast, and review features.<br>
+                        <span class="bullet">•</span> Achieved 85% accuracy using Random Forest and XGBoost algorithms.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="proj-title">
+                        Titanic Survival Prediction
+                        <a href="https://github.com/arunsankari18-web/Task-1-in-Data-Science" target="_blank">Project Link</a>
+                    </div>
+                    <div class="proj-desc">
+                        <span class="bullet">•</span> Classified passenger survival using machine learning algorithms with EDA and feature engineering.<br>
+                        <span class="bullet">•</span> Achieved 82% accuracy using Logistic Regression and Decision Trees.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="proj-title">
+                        Smart Exam Preparation
+                        <a href="https://github.com/Priyaa286/Smart-Exam-Preparator-SpringBoot" target="_blank">Project Link</a>
+                    </div>
+                    <div class="proj-desc">
+                        <span class="bullet">•</span> Full-stack exam preparation platform built with Java Spring Boot.<br>
+                        <span class="bullet">•</span> Features MCQ tests, progress tracking, and personalized study recommendations.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="proj-title">
+                        Calendar Application
+                        <a href="https://www.image2url.com/r2/default/videos/1786210164852-3ee97132-a16c-4447-9ac6-456c034668a5.mp4" target="_blank" class="view-link">
+                            <i class="fas fa-video"></i> View Video
+                        </a>
+                    </div>
+                    <div class="proj-desc">
+                        <span class="bullet">•</span> Built an interactive calendar with event management and monthly view using vanilla JavaScript.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="proj-title">
+                        Bluetooth Controlled Smart RC Car
+                        <a href="./RC Robot car.jpeg" target="_blank" class="view-link">
+                            <i class="fas fa-image"></i> View Image
+                        </a>
+                    </div>
+                    <div class="proj-desc">
+                        <span class="bullet">•</span> Built an Arduino-based RC car using Bluetooth, L293D motor driver, and ultrasonic sensor.<br>
+                        <span class="bullet">•</span> Implemented wireless control and obstacle detection for smart navigation.
+                    </div>
+                </div>
+
+                <!-- ===== CERTIFICATIONS - CLEAN STRUCTURED ===== -->
+                <div class="section-title">CERTIFICATIONS</div>
+
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <span class="cert-name">Technical English for Engineers</span>
+                        <span class="cert-org">— NPTEL, IIT Madras</span>
+                        <span class="cert-details">
+                            <span>8 Weeks</span>
+                            <span class="sep">|</span>
+                            <span>Score: 70%</span>
+                        </span>
+                    </div>
+                    <a href="./Technical English for Engineers (1) - 28.pdf" target="_blank" class="cert-link">View certificate</a>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <span class="cert-name">Introduction to Internet of Things</span>
+                        <span class="cert-org">— NPTEL, IIT Kharagpur</span>
+                        <span class="cert-details">
+                            <span>12 Weeks</span>
+                            <span class="sep">|</span>
+                            <span>Score: 79%</span>
+                        </span>
+                    </div>
+                    <a href="./Introduction To Internet Of Things-1 - 28.pdf" target="_blank" class="cert-link">View certificate</a>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <span class="cert-name">Introduction to Industry 4.0 and Industrial IoT</span>
+                        <span class="cert-org">— NPTEL, IIT Kharagpur</span>
+                        <span class="cert-details">
+                            <span>12 Weeks</span>
+                            <span class="sep">|</span>
+                            <span>Score: 78%</span>
+                        </span>
+                    </div>
+                    <a href="./IIOT - 28.pdf" target="_blank" class="cert-link">View certificate</a>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <span class="cert-name">Affective Computing</span>
+                        <span class="cert-org">— NPTEL, IIIT Delhi</span>
+                        <span class="cert-details">
+                            <span>12 Weeks</span>
+                            <span class="sep">|</span>
+                            <span>Score: 72%</span>
+                        </span>
+                    </div>
+                    <a href="./Affective Computing - 28.pdf" target="_blank" class="cert-link">View certificate</a>
+                </div>
+
+                <!-- ===== ACHIEVEMENTS ===== -->
+                <div class="section-title">ACHIEVEMENTS</div>
+                <div class="achieve-item">
+                    <strong>3rd Place – Paper Presentation, Neupane, Nexus 2K25</strong> — KPR Institute of Engineering and Technology
+                    <a href="./neuranexus.- 28pdf.pdf" target="_blank">View certificate</a>
+                </div>
+
+                <!-- ===== PARTICIPATION ===== -->
+                <div class="section-title">PARTICIPATION</div>
+                <div class="participation-item">Hack Beyond Limits (Online Odyssey), Rathinam College</div>
+                <div class="participation-item">2025, Code Hunt, Coimbatore Institute of Technology</div>
+                <div class="participation-item">Code Sprint, National Engineering College, Koyilandy</div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
